@@ -74,6 +74,22 @@ class Conv2d_partial(nn.Conv2d):
                         self.padding, self.dilation, self.groups)
 ```
 
+## My Test Result
+I Tested PCB padding with ResNet using own dataset. 
+Test is done 5 times.
+
+|  | Original Conv with zero-padding | Partial-convolution based padding  |
+| - | :-: | :-: | 
+| 1st fold | 97.68% | 97.81% | 
+| 2nd fold | 98.06% | 97.81% | 
+| 3rd fold | 98.10% | 97.85% | 
+| 4th fold | 97.77% | 98.22% | 
+| 5th fold | 98.14% | 97.89% | 
+| accuracy mean | 97.95% | 97.92% |
+| accuracy stddev | 0.187 | **0.1549** |
+
+--> Accuracy is almost same. But, stddev of accuracy is better than original conv.
+
 ## Reference
 - [TensorFlow implementation](https://github.com/taki0112/partial_conv-Tensorflow)
 - [PyTorch ResNet implementation](https://github.com/jack-willturner/batchnorm-pruning/blob/master/models/resnet.py)
