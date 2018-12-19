@@ -18,6 +18,8 @@ torchvision
 ```
 
 ## Partial Convolution based Padding Implement
+You can only use `partial=True` if you want to use partial_conv_based_padding, else, same with torch.nn.Conv2d.
+
 ```
 class Conv2d_partial(nn.Conv2d):
     def __init__(self, in_channels, out_channels, kernel_size, stride=1,
