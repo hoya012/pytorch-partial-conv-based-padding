@@ -17,7 +17,20 @@ torch=1.0.0
 torchvision
 ```
 
-## Partial Convolution based Padding Implement
+## Usage
+You only run `PCB_padding_ResNet.ipynb`.
+
+If you change ResNet Architecture, try this.
+
+``` 
+net = ResNet(BasicBlock, [2, 2, 2, 2], 10) #ResNet-18
+net = ResNet(BasicBlock, [3, 4, 6, 3], 10) #ResNet-34
+net = ResNet(Bottleneck, [3, 4, 6, 3], 10) #ResNet-50
+net = ResNet(Bottleneck, [3, 4, 23, 3], 10) #ResNet-101
+net = ResNet(Bottleneck, [3, 8, 36, 3], 10) #ResNet-152
+```
+
+## Partial Convolution based Padding Implementation
 You can only use `partial=True` if you want to use partial_conv_based_padding, else, same with torch.nn.Conv2d.
 
 ```
